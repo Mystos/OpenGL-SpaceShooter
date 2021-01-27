@@ -103,7 +103,7 @@ struct Vertex {
 
 struct Texture {
 	unsigned int id;
-	string type;
+	std::string type;
 };
 
 int main(void)
@@ -155,7 +155,7 @@ int main(void)
 	GLuint vbo, vao;
 	glGenBuffers(1, &vbo);
 	glGenVertexArrays(1, &vao);
-
+	
 	glBindVertexArray(vao);
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 	//glBufferData(GL_ARRAY_BUFFER, nParticules * sizeof(Particule), particules.data(), GL_STATIC_DRAW);
