@@ -95,6 +95,17 @@ void APIENTRY opengl_error_callback(GLenum source,
 	std::cout << message << std::endl;
 }
 
+struct Vertex {
+	glm::vec3 Position;
+	glm::vec3 Normal;
+	glm::vec2 TexCoords;
+};
+
+struct Texture {
+	unsigned int id;
+	string type;
+};
+
 int main(void)
 {
 	GLFWwindow* window;
@@ -197,6 +208,8 @@ int main(void)
 
 		glClear(GL_COLOR_BUFFER_BIT);
 		glClearColor(0.5f, 0.8f, 0.3f, 1.0f);
+
+
 
 		//glDrawArrays(GL_POINTS, 0, triangles.size());
 		//glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);

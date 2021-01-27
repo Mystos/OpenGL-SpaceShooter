@@ -118,6 +118,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\Unity\Unity Project\OpenGL-SpaceShooter\OpenGL_Shooter\glad\include\;D:\Unity\Unity Project\OpenGL-SpaceShooter\OpenGL_Shooter\SFML-2.5.1\include\;D:\Unity\Unity Project\OpenGL-SpaceShooter\OpenGL_Shooter\glad\include\glad;D:\Unity\Unity Project\OpenGL-SpaceShooter\OpenGL_Shooter;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -132,6 +133,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\Unity\Unity Project\OpenGL-SpaceShooter\OpenGL_Shooter\glad\include\;D:\Unity\Unity Project\OpenGL-SpaceShooter\OpenGL_Shooter\SFML-2.5.1\include\;D:\Unity\Unity Project\OpenGL-SpaceShooter\OpenGL_Shooter\glad\include\glad;D:\Unity\Unity Project\OpenGL-SpaceShooter\OpenGL_Shooter;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
