@@ -9,6 +9,10 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/glm.hpp>
 
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
+
 #include <vector>
 #include <iostream>
 #include <random>
@@ -142,6 +146,19 @@ int main(void)
 	glEnable(GL_DEPTH_TEST);
 
 
+	// Import 3D assets
+	Assimp::Importer importer;
+	const std::string& pFile = "D:\Visual Studio Project\OpenGL-SpaceShooter\OpenGL_Shooter\Ship\obj\FA59AMako.obj";
+	const aiScene* scene = importer.ReadFile(pFile, aiProcess_Triangulate | aiProcess_FlipUVs);
+	if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode)
+	{
+		std::cerr << "ERROR::ASSIMP::" << importer.GetErrorString() << std::endl;
+		return;
+	}
+	directory = pFile.substr(0, pFile.find_last_of('/'));
+
+	processNode(scene->mRootNode, scene);
+
 	// Shader
 	const auto vertex = MakeShader(GL_VERTEX_SHADER, "shader.vert");
 	const auto fragment = MakeShader(GL_FRAGMENT_SHADER, "shader.frag");
@@ -221,3 +238,4 @@ int main(void)
 	glfwTerminate();
 	exit(EXIT_SUCCESS);
 }
+
